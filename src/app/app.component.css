@@ -1,0 +1,11 @@
+.title {
+  color: #1E88E5;
+  font-style: italic;
+  font-weight: bold;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.prefix {
+  color: #CC0023;
+}
