@@ -7,16 +7,8 @@ import { AppComponent } from './app.component';
 import { AddOperationComponent } from './components/add-operation/add-operation.component';
 import { OperationsComponent } from './components/operations/operations.component';
 
-import { applyMiddleware, Store, combineReducers, compose, createStore } from 'redux';
-import { NgReduxModule, NgRedux } from '@angular-redux/store';
+import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { rootReducer, IAppState } from './redux/reducer';
-
-const composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] || compose;
-const store: Store<IAppState> = createStore(
-  rootReducer,
-  composeEnhancers(
-    applyMiddleware())
-);
 
 @NgModule({
   declarations: [
@@ -27,9 +19,14 @@ const store: Store<IAppState> = createStore(
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgReduxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private ngRedux: NgRedux<IAppState>, private devTools: DevToolsExtension) {
+    ngRedux.configureStore(rootReducer, undefined, [], [devTools.enhancer()]);
+  }
+}

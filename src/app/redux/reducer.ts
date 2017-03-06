@@ -1,6 +1,7 @@
-import { Reducer, Action } from 'redux';
+import { Reducer } from 'redux';
+import { IAction } from './actions';
 
-interface IOperation {
+export interface IOperation {
   amount: number;
   type: 'DEPOSIT' | 'WITHDRAW';
   description: string;
@@ -8,9 +9,28 @@ interface IOperation {
 }
 
 export interface IAppState {
-  balance: string;
+  balance: number;
+  operations: IOperation[];
 };
 
-export function rootReducer(state: IAppState = {} as IAppState): IAppState {
-  return state;
+const defaultState: IAppState = {
+  balance: 0,
+  operations: [],
+};
+
+export function rootReducer(state: IAppState = defaultState, action: IAction): IAppState {
+  switch (action.type) {
+    case 'ADD_DEPOSIT':
+      return Object.assign({}, state, {
+        balance: state.balance + action.payload.amount,
+        operations: state.operations.concat(action.payload),
+      });
+    case 'ADD_WITHDRAW':
+      return Object.assign({}, state, {
+        balance: state.balance - action.payload.amount,
+        operations: state.operations.concat(action.payload),
+      });
+    default:
+      return state;
+  }
 };

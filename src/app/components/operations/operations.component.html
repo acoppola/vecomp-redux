@@ -1,3 +1,8 @@
+<p>
+  Saldo:
+  <span class="text-lg">{{balance$ | async | currency:'EUR'}}</span>
+</p>
+
 <div class="table">
   <thead>
     <th>Amount</th>
@@ -5,10 +10,12 @@
     <th>Date</th>
   </thead>
   <tbody>
-    <tr>
-      <td>1000.00 €</td>
-      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-      <td>Sun Feb 26 2017 22:01:28 GMT+0100 (CET)</td>
+    <tr *ngFor="let operation of operations">
+      <td class="{{operation.type === 'DEPOSIT' ? 'text-success' : 'text-danger'}}" >
+        {{operation.amount | currency:'EUR':true}}
+      </td>
+      <td>{{operation.description}}</td>
+      <td>{{operation.date}}</td>
     </tr>
   </tbody>
 </div>

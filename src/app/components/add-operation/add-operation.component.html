@@ -1,23 +1,23 @@
 <div class="form-group row">
   <div class="col-3">
-    <input class="form-control" type="number" placeholder="Amount">
+    <input [(ngModel)]="depositModel.amount" name="amount" class="form-control" type="number" placeholder="Amount">
   </div>
   <div class="col-7">
-    <input class="form-control" type="text" placeholder="Description">
+    <input [(ngModel)]="depositModel.description" name="description" class="form-control" type="text" placeholder="Description">
   </div>
   <div class="col-sm-2">
-    <button class="btn btn-primary">DEPOSITA</button>
+    <button (click)="handleDeposit()" class="btn btn-primary">DEPOSITA</button>
   </div>
 </div>
 
 <div class="form-group row">
   <div class="col-3">
-    <input class="form-control" type="number" placeholder="Amount">
+    <input [(ngModel)]="withdrawModel.amount" name="amount" class="form-control" type="number" placeholder="Amount">
   </div>
   <div class="col-7">
-    <input class="form-control" type="text" placeholder="Description">
+    <input [(ngModel)]="withdrawModel.description" name="description" class="form-control" type="text" placeholder="Description">
   </div>
   <div class="col-sm-2">
-    <button class="btn btn-primary">PRELEVA</button>
+    <button (click)="handleWithdraw()" class="btn btn-primary">PRELEVA</button>
   </div>
 </div>
