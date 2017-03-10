@@ -13,7 +13,7 @@ export function addDeposit(amount: number, description: string): IAction {
     payload: {
       amount,
       description,
-      date: now,
+      date: prettyNow,
       type: 'DEPOSIT',
     },
   };
@@ -28,7 +28,7 @@ export function addWithdraw(amount: number, description: string): IAction {
     payload: {
       amount,
       description,
-      date: now,
+      date: prettyNow,
       type: 'WITHDRAW',
     },
   };

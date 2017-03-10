@@ -13,3 +13,7 @@ Per avviare l'app eseguite il commando da terminale:
 npm install # Installazione dipendenze
 npm start # Avvio applicazione
 ```
+
+## Preview
+
+![Preview](./preview.png)
