@@ -1,27 +1,15 @@
-# NgRedux
+# Wonder Workshop - Redux
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
+Il repository contiene il codice finale della live-coding mostrata durante la 2° giornata di [Wonder Workshop by Vecomp Software](http://www.vecompsoftware.it/supereroi/) relativa ad Angular 2+ e Redux.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Il progetto è stato realizzato con [angular-cli](https://github.com/angular/angular-cli), 
+da installare come requisito della macchina, oltre a **NPM v3+** e **NodeJS v6.7+**.
 
-## Code scaffolding
+## Avvio
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Per avviare l'app eseguite il commando da terminale:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+npm install # Installazione dipendenze
+npm start # Avvio applicazione
+```
